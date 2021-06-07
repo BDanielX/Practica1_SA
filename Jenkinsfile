@@ -12,7 +12,6 @@ pipeline {
                 script {	
 		    sh '''cd Frontend
                     npm install'''
-sh "ls"
                 }
             }   
         }
@@ -20,9 +19,8 @@ sh "ls"
         stage("Ejecutar pruebas unitarias"){
             steps {
                 script {	
-		    sh "cd Frontend"
-                    sh "ng test"
-sh "ls"
+		    sh '''cd Frontend
+                    ng test'''
                 }
             }   
         }
