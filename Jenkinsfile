@@ -31,15 +31,6 @@ pipeline {
                 }
             }   
         }
-
-stage("Ejecutar pruebas unitarias"){
-            steps {
-                script {	
-		    sh '''cd Frontend
-                    ng test --watch=false --browsers=ChromeHeadless'''
-                }
-            }   
-        }
     }
 
     //El apartado post se ejecuta siempre al terminar los stages
