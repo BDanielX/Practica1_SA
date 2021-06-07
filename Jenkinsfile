@@ -1,26 +1,36 @@
 //Este archivo lo usa el pipeline de jenkins  
-//import groovy.json.JsonSlurperClassic
-
-//def jsonParse(def json) {
-//    new groovy.json.JsonSlurperClassic().parseText(json)
-//}
 
 pipeline {
     agent {
         label 'master' 
     }
-    environment {
-        appName = "variable" 
-    }
+
     stages {
-        stage("paso 1"){
+        stage("Entrando a la carpeta frontend"){
+            steps{
+                script{
+                    sh "cd Frondtend"
+                }
+            }
+        }
+
+        stage("Actualizar paquetes"){
             steps {
-                script {			
-                    sh "echo 'hola mundo'"
+                script {	
+                    sh "npm install"
+                }
+            }   
+        }
+
+        stage("Ejecutar pruebas unitarias"){
+            steps {
+                script {	
+                    sh "ng test"
                 }
             }   
         }
     }
+
     //El apartado post se ejecuta siempre al terminar los stages
     post {
         //Always se ejecuta siempre que terminan los stages, sin importar el estado 
