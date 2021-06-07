@@ -12,6 +12,7 @@ pipeline {
                 script {	
 		    sh "cd Frontend"
                     sh "npm install"
+sh "ls"
                 }
             }   
         }
@@ -21,6 +22,7 @@ pipeline {
                 script {	
 		    sh "cd Frontend"
                     sh "ng test"
+sh "ls"
                 }
             }   
         }
