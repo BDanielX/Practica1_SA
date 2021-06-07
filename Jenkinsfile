@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {	
 		    sh '''cd Frontend
-                    ng test'''
+                    ng test --watch=false --browsers=ChromeHeadless'''
                 }
             }   
         }
