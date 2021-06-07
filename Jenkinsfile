@@ -6,17 +6,11 @@ pipeline {
     }
 
     stages {
-        stage("Entrando a la carpeta frontend"){
-            steps{
-                script{
-                    sh "cd Frontend"
-                }
-            }
-        }
 
         stage("Actualizar paquetes"){
             steps {
                 script {	
+		    sh "cd Frontend"
                     sh "npm install"
                 }
             }   
@@ -25,6 +19,7 @@ pipeline {
         stage("Ejecutar pruebas unitarias"){
             steps {
                 script {	
+		    sh "cd Frontend"
                     sh "ng test"
                 }
             }   
