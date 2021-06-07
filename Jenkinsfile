@@ -10,8 +10,8 @@ pipeline {
         stage("Actualizar paquetes"){
             steps {
                 script {	
-		    sh "cd Frontend"
-                    sh "npm install"
+		    sh '''cd Frontend
+                    npm install'''
 sh "ls"
                 }
             }   
