@@ -9,7 +9,7 @@ pipeline {
         stage("Entrando a la carpeta frontend"){
             steps{
                 script{
-                    sh "cd Frondtend"
+                    sh "cd Frontend"
                 }
             }
         }
