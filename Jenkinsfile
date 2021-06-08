@@ -35,8 +35,10 @@ pipeline {
                 steps {
                     script {			
                         sh '''cd Frontend
-	                ng build
-        	        http-server ./dist/Frontend'''
+	                    ng build
+        	            cd dist
+                        cd Frontend
+                        mv * /var/www/html'''
                     }
                 }   
             }
