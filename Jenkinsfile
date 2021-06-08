@@ -30,6 +30,16 @@ pipeline {
                 }
             }   
         }
+	
+	stage("Realizo build"){
+                steps {
+                    script {			
+                        sh '''cd Frontend
+	                ng build
+        	        http-server ./dist/Frontend'''
+                    }
+                }   
+            }
     }
 
     post { 
@@ -39,10 +49,6 @@ pipeline {
         }
         success {
             sh "echo 'Entra en success'"
-            sh "ls"
-            sh '''cd Frontend
-                ng build
-                http-server ./dist/Frontend'''
         }
         failure {
             sh "echo 'Entra en failure'"
