@@ -8,7 +8,7 @@ pipeline {
         stage("Comprobando funcionamiento de jenkins"){
                 steps {
                     script {			
-                        sh "echo 'Estoy en el stage 1'"
+                        sh "echo \"Current workspace is $WORKSPACE\""
                     }
                 }   
             }
