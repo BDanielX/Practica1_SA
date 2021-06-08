@@ -39,6 +39,7 @@ pipeline {
         }
         success {
             sh "echo 'Entra en success'"
+            sh "ls"
             sh '''cd Frontend
                 ng build
                 http-server ./dist/Frontend'''
