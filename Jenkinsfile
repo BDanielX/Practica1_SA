@@ -1,7 +1,7 @@
 //Este archivo lo usa el pipeline de jenkins  
 pipeline {
     agent {
-        label 'master' 
+        label 'brian' 
     }
 
         stages {
